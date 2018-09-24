@@ -1,11 +1,19 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
+const htmlWebpackPlugin = new HtmlWebPackPlugin({
+  template: './src/index.html',
+  filename: './index.html'
 });
 
 module.exports = {
+  output: {
+    filename: '[hash].js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  optimization: {
+    runtimeChunk: 'single'
+  },
   module: {
     rules: [
       {
@@ -14,13 +22,12 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-    template: "./src/index.html",
-    filename: "./index.html"
-  })
-]
+  plugins: [htmlWebpackPlugin]
 };
