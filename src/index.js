@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import style from "./index.scss"
 
 const App = () => (
-   <div>Hello React!</div>
+   <div className='test'>Hello React!</div>
 )
 
 ReactDOM.render(<App />, document.getElementById('app'))
