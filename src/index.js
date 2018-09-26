@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import style from "./index.scss"
+import Search from './search'
 
 const App = () => (
-   <div className='test'>Hello React!</div>
+  <Search />
 )
 
 ReactDOM.render(<App />, document.getElementById('app'))
