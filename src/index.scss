@@ -1,3 +1,25 @@
 .test {
-  border-color: red;
+  background-color: red;
+  margin-bottom: 50px;
+  text-align: center
 }
+
+.inputSearch {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.button {
+	padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#478bf9;
+	color:#fff;
+	border-radius:2px;
+	width:100px;
+	border:none;
+}
+

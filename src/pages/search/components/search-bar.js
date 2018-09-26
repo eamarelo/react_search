@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../../../index.scss'
 
 class SearchBar extends Component {
   constructor() {
@@ -23,8 +24,8 @@ class SearchBar extends Component {
   render() {
     return (
       <form>
-        <input type="text" placeholder="search" onChange={e => this.handleOnChange(e.currentTarget.value)} />
-        <button type="submit" onClick={this.handleOnClick.bind(this)}>Click</button>
+        <input className="inputSearch" type="text" placeholder="search" onChange={e => this.handleOnChange(e.currentTarget.value)} />
+        <button className="button" type="submit" onClick={this.handleOnClick.bind(this)}>Click</button>
       </form>
     )
   }
