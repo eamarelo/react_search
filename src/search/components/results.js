@@ -2,7 +2,7 @@ import React from 'react'
 
 const Results = ({ data }) => (
   <ul>
-    {data.map(item => <li>{item.title}</li>)}
+    {data.map(item => <li key={item.id}>{item.title}</li>)}
   </ul>
 )
 

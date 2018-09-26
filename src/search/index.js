@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 import initialState from './initial-state'
 import Results from './components/results'
+import SearchBar from './components/search-bar'
 import '../index.scss'
 
 class Search extends Component {
@@ -10,6 +11,7 @@ class Search extends Component {
     super()
 
     this.state = initialState
+    this.getValue = this.searchResult.bind(this)
   }
 
   /**
@@ -24,11 +26,17 @@ class Search extends Component {
       .then((response) => {
         this.state.data = this.formatEvents(response.data.records)
 
-        this.forceUpdate()
+        this.setState({
+          data: this.formatEvents(response.data.records)
+        })
       })
       .catch((error) => {
         console.log(error)
       })
+  }
+
+  searchResult(value) {
+    this.getData(value)
   }
 
   /**
@@ -49,17 +57,12 @@ class Search extends Component {
     }))
   }
 
-  handleChange(event) {
-    this.setState({
-      filter: event.target.value
-    })
-  }
-
   render() {
     const { data } = this.state
 
     return (
       <div>
+        <SearchBar searchResult={this.getValue} />
         <Results data={data} />
       </div>
     )
