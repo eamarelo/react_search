@@ -3,9 +3,9 @@ import React from 'react'
 const Results = ({ data }) => (
   <div>
     {data.map(item => (
-      <div key={item.id}>
-        <div>
-          {`Title: ${item.title}`}
+      <div className="test" key={item.id}>
+        <div className="title">
+          {`${item.title} :`}
         </div>
         <img className="floatLeft" src={item.image} alt="img-event" height="40%" width="40%" />
         <div>
